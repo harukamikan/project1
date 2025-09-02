@@ -38,12 +38,7 @@ return new class extends Migration
             $table->integer('last_activity')->index();
         });
 
-        Schema::create('tweets', function (Blueprint $table) {
-               $table->id();
-               $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-  　　　　　　  $table->string('tweet');
-               $table->timestamps();
-  });
+       
         
     }
 
@@ -60,7 +55,7 @@ return new class extends Migration
         Schema::dropIfExists('tweets');
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
-        Schema::dropIfExists('sessions');
+       
        
     }
 
