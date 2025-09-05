@@ -26,15 +26,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('tweets');
     }
-    class Tweet extends Model
-{
-  use HasFactory;
-
-  protected $fillable = ['tweet'];
-
-  public function user()
-  {
-    return $this->belongsTo(User::class);
-  }
-}
+   
 };
