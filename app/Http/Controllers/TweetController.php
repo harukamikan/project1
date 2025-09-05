@@ -31,7 +31,7 @@ class TweetController extends Controller
      */
     public function store(Request $request)
     {
-　　 $request->validate([
+      $request->validate([
       'tweet' => 'required|max:255',
     ]);
 
