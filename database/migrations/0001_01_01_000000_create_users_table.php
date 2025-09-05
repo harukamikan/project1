@@ -59,7 +59,16 @@ return new class extends Migration
        
     }
 
+class User extends Authenticatable
+{
 
+  // 省略
+
+  public function tweets()
+  {
+    return $this->hasMany(Tweet::class);
+  }
+}
 
 
 };
