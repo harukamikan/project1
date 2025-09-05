@@ -1,0 +1,11 @@
+
+  GET|HEAD        tweets ................ tweets.index › TweetController@index
+  POST            tweets ................ tweets.store › TweetController@store
+  GET|HEAD        tweets/create ....... tweets.create › TweetController@create
+  GET|HEAD        tweets/{tweet} .......... tweets.show › TweetController@show
+  PUT|PATCH       tweets/{tweet} ...... tweets.update › TweetController@update
+  DELETE          tweets/{tweet} .... tweets.destroy › TweetController@destroy
+  GET|HEAD        tweets/{tweet}/edit ..... tweets.edit › TweetController@edit
+
+                                                            Showing [7] routes
+
