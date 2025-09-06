@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tweet extends Model
 {
-    /** @use HasFactory<\Database\Factories\TweetFactory> */
+    
     use HasFactory;
 
-    protected $fillable = ['user_id', 'tweet'];
+    protected $fillable = ['tweet'];
+    
     public function user()
     {
         return $this->belongsTo(User::class);
