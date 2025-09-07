@@ -76,15 +76,15 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-        </div>
+        
 
          <!-- 🔽 2項目追加 -->
-        <x-responsive-nav-link :href="route('tweets.index')" :active="request()->routeIs('tweets.index')">
+         <x-responsive-nav-link :href="route('tweets.index')" :active="request()->routeIs('tweets.index')">
           {{ __('Tweet一覧') }}
-        </x-responsive-nav-link>
-        <x-responsive-nav-link :href="route('tweets.create')" :active="request()->routeIs('tweets.create')">
+         </x-responsive-nav-link>
+         <x-responsive-nav-link :href="route('tweets.create')" :active="request()->routeIs('tweets.create')">
           {{ __('Tweet作成') }}
-        </x-responsive-nav-link>
+         </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
