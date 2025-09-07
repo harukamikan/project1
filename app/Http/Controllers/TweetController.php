@@ -33,7 +33,7 @@ class TweetController extends Controller
       'tweet' => 'required|max:255',
     ]);
 
-    $request->user()->tweets()->create($request->only('tweet'));
+      $request->user()->tweets()->create($request->only('tweet'));
 
     return redirect()->route('tweets.index');
     }
