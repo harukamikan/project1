@@ -1,6 +1,6 @@
 <div>
     <!-- Live as if you were to die tomorrow. Learn as if you were to live forever. - Mahatma Gandhi -->
-     <x-app-layout>
+    <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
       {{ __('Tweet詳細') }}
@@ -28,9 +28,24 @@
             </form>
           </div>
           @endif
+           <div class="flex mt-4">
+            @if ($tweet->liked->contains(auth()->id()))
+            <form action="{{ route('tweets.dislike', $tweet) }}" method="POST">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="text-red-500 hover:text-red-700">dislike {{$tweet->liked->count()}}</button>
+            </form>
+            @else
+            <form action="{{ route('tweets.like', $tweet) }}" method="POST">
+              @csrf
+              <button type="submit" class="text-blue-500 hover:text-blue-700">like {{$tweet->liked->count()}}</button>
+            </form>
+            @endif
+          </div>
         </div>
       </div>
     </div>
   </div>
 </x-app-layout>
 </div>
+
