@@ -62,7 +62,7 @@ class TweetController extends Controller
     {
         $request->validate([
          'tweet' => 'required|max:255',
-    ]);
+        ]);
 
         $tweet->update($request->only('tweet'));
 
@@ -75,6 +75,8 @@ class TweetController extends Controller
      */
     public function destroy(Tweet $tweet)
     {
-        //
+        $tweet->delete();
+
+        return redirect()->route('tweets.index');
     }
 }
