@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tweet;
 use App\Models\Comment;
 use Illuminate\Http\Request;
-use App\Models\Tweet;
+
 
 class CommentController extends Controller
 {
