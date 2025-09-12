@@ -27,7 +27,7 @@ class CommentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, Tweet $tweet)
+    public function store(Tweet $tweet, Request $request)
     {
         $request->validate([
          'comment' => 'required|string|max:255',
@@ -44,9 +44,9 @@ class CommentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Comment $comment)
+    public function show(Tweet $tweet,Comment $comment)
     {
-        //
+         return view('tweets.comments.show', compact('tweet', 'comment'));
     }
 
     /**
