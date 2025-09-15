@@ -55,7 +55,7 @@ class CommentController extends Controller
      */
     public function edit(Comment $comment)
     {
-        //
+         return view('tweets.comments.edit', compact('tweet', 'comment'));
     }
 
     /**
@@ -63,7 +63,13 @@ class CommentController extends Controller
      */
     public function update(Request $request, Comment $comment)
     {
-        //
+        $request->validate([
+        'comment' => 'required|string|max:255',
+        ]);
+
+        $comment->update($request->only('comment'));
+
+        return redirect()->route('tweets.comments.show', [$tweet, $comment]);
     }
 
     /**
@@ -71,6 +77,8 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        $comment->delete();
+
+        return redirect()->route('tweets.show', $tweet);
     }
 }
