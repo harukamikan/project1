@@ -53,7 +53,7 @@ class CommentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Comment $comment)
+    public function edit(Tweet $tweet,Comment $comment)
     {
          return view('tweets.comments.edit', compact('tweet', 'comment'));
     }
@@ -61,7 +61,7 @@ class CommentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comment $comment)
+    public function update(Request $request, Tweet $tweet,Comment $comment)
     {
         $request->validate([
         'comment' => 'required|string|max:255',
@@ -75,7 +75,7 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Comment $comment)
+    public function destroy(Tweet $tweet,Comment $comment)
     {
         $comment->delete();
 
