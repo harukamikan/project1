@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FollowController extends Controller
@@ -25,9 +27,10 @@ class FollowController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(User $user)
     {
-        //
+        auth()->user()->follows()->attach($user->id);
+        return back();
     }
 
     /**
@@ -57,8 +60,9 @@ class FollowController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        auth()->user()->follows()->detach($user->id);
+        return back();
     }
 }
