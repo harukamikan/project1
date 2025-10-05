@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany; // ★ DMとフォロー機能に必要
+use Illuminate\Database\Eloquent\Relations\HasMany; // ★ メッセージ機能に必要
 
 class User extends Authenticatable
 {
@@ -45,28 +46,52 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-     public function tweets()
+    
+    // ツイート機能
+    public function tweets(): HasMany
     {
         return $this->hasMany(Tweet::class);
     }
 
-    public function likes()
-   {
-      return $this->belongsToMany(Tweet::class)->withTimestamps();
+    // いいね機能
+    public function likes(): BelongsToMany
+    {
+       return $this->belongsToMany(Tweet::class)->withTimestamps();
     }
 
-    public function comments()
+    // コメント機能
+    public function comments(): HasMany
     {
       return $this->hasMany(Comment::class);
     }
 
-    public function follows()
+    // フォロー機能 (自分がフォローしている人)
+    public function follows(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'follows', 'follow_id', 'follower_id');
     }
 
-    public function followers()
+    // フォロワー機能 (自分をフォローしている人)
+    public function followers(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'follows', 'follower_id', 'follow_id');
+    }
+    
+    // --- DM機能 ---
+    
+    /**
+     * このユーザーが参加しているDMルーム
+     */
+    public function rooms(): BelongsToMany
+    {
+        return $this->belongsToMany(Room::class);
+    }
+
+    /**
+     * このユーザーが送信したメッセージ
+     */
+    public function messages(): HasMany
+    {
+        return $this->hasMany(Message::class);
     }
 }
