@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-    Schema::create('room_user', function (Blueprint $table) {
-      $table->foreignId('room_id')->constrained()->cascadeOnDelete();
-      $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-      $table->primary(['room_id', 'user_id']); // 複合主キー
-    // $table->timestamps(); // 必要なら有効に
-    });
+       Schema::create('room_user', function (Blueprint $table) {
+         $table->foreignId('room_id')->constrained()->cascadeOnDelete();
+         $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+         $table->primary(['room_id', 'user_id']); // 複合主キー
+         // $table->timestamps(); // いらないならコメントアウト
+        });
     }
 
     /**
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('room_user');
+       Schema::dropIfExists('room_user');
     }
 };
