@@ -10,9 +10,11 @@
 # project1
 
 [概要](#概要)  
-[chapter02](#chapter02)  
-[chapter03](#chapter03)  
-[chapter04](#chapter04)
+[操作方法](#操作方法)  
+[動画フォルダ](#動画フォルダ)  
+[工夫した点](#工夫した点)
+[Phase1を終えて](#Phase1を終えて)
+[提出者](#提出者)
 
 ---
 
