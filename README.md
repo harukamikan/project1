@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# laratter
+# project1
 
 [chapter01](#chapter01)  
 [chapter02](#chapter02)  
@@ -16,20 +16,26 @@
 
 ---
 
-## chapter01
+## 概要
+新規機能追加として講義で作成した機能に「DM機能」を追加しました。
+
+## 操作方法
+1.トップページを開く
+2.tweet一覧を開く
+3.投稿者を選択する
+4.DMを開始するを押す
+5.メッセージを送信する。
+
+## 動画フォルダ
 ここに内容
 
-## chapter02
-ここに内容
-
-## chapter03
-ここに内容
-
-## chapter04
-ここに内容
+## 提出者　
+5th41_山口晴歌_W_福岡工業大学　
 
 
-## About Laravel
+## 提出日
+2025年10月7日
+提出形式：画面収録
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
